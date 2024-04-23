@@ -1,0 +1,14 @@
+import {body} from "express-validator"
+ export const signUp=[
+    body('FullName',"fullname is required").not().isEmpty(),
+    body('FullName',"fullname must be atleast 6 ").isLength({min:6}),
+    body('Email',"Email  is required").not().isEmpty(),
+    body('Email',"invalid Email").isEmail(),
+    body('Password',"Password is required").not().isEmpty(),
+    body('Password',"Provide strong password").isStrongPassword(), 
+]
+export const product=[
+    body('productName',"product name is required").not().isEmpty(),
+    body('productPrice',"product price is required").not().isEmpty(),
+    body('NumberOfItmes',"number of items  is required").not().isEmpty(),
+]
